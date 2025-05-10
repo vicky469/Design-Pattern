@@ -2,6 +2,9 @@
 using DesignPattern.Core;
 using DesignPattern.Creational.AbstractFactory;
 using DesignPattern.Creational.Builder;
+using DesignPattern.Creational.FactoryMethod.PaymentExample;
+using DesignPattern.Creational.Prototype;
+using DesignPattern.Creational.Prototype.DocumentExample;
 using DesignPattern.Structural.Bridge;
 
 namespace DesignPattern
@@ -10,7 +13,7 @@ namespace DesignPattern
     {
         public static void Main(string[] args)
         {
-            ExecutePattern(DesignPatternType.Bridge);
+            ExecutePattern(DesignPatternType.Prototype);
         }
 
         private static void ExecutePattern(DesignPatternType patternType)
@@ -29,6 +32,12 @@ namespace DesignPattern
                     break;
                 case DesignPatternType.Bridge:
                     runner = new BridgePatternRunner();
+                    break;
+                case DesignPatternType.FactoryMethod:
+                    runner = new FactoryMethodPatternRunner();
+                    break;
+                case DesignPatternType.Prototype:
+                    runner = new PrototypePatternRunner();
                     break;
                 default:
                     throw new ArgumentException("Invalid design pattern selected", nameof(patternType));
